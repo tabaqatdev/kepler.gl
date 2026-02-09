@@ -102,12 +102,12 @@ function ExportHtmlMapFactory(): React.ComponentType<ExportHtmlMapProps> {
             value={options ? options.userMapboxToken : ''}
           />
           <div className="disclaimer">
-            <StyledWarning>
+            {/* <StyledWarning>
               <FormattedMessage id={'modal.exportMap.html.tokenMisuseWarning'} />
-            </StyledWarning>
-            <FormattedMessage id={'modal.exportMap.html.tokenDisclaimer'} />
+            </StyledWarning> */}
+            {/* <FormattedMessage id={'modal.exportMap.html.tokenDisclaimer'} /> */}
             <ExportMapLink href={EXPORT_HTML_MAP_DOC}>
-              <FormattedMessage id={'modal.exportMap.html.tokenUpdate'} />
+              {/* <FormattedMessage id={'modal.exportMap.html.tokenUpdate'} /> */}
             </ExportMapLink>
           </div>
         </div>

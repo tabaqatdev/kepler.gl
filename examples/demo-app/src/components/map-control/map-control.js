@@ -174,7 +174,7 @@ export function BannerMapPanel() {
       {isActive ? (
         <StyledProjectPanel>
           <div className="project-title">
-            <div>{'Kepler.gl 3.1 + DuckDB is here!'}</div>
+            <div>{'Tabaqat + DuckDB is here!'}</div>
 
             <CloseButton
               onClick={() => {

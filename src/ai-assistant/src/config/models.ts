@@ -12,6 +12,11 @@ export const PROVIDER_DEFAULT_BASE_URLS = {
 
 export const PROVIDER_MODELS = {
   openai: [
+    'gpt-5.2-pro',
+    'gpt-5.2',
+    'gpt-5.1',
+    'gpt-5',
+    'gpt-4-turbo',
     'gpt-4.1',
     'gpt-4o',
     'gpt-4o-mini',

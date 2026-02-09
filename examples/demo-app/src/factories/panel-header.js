@@ -1,8 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright contributors to the kepler.gl project
 
-import {PanelHeaderFactory, Icons} from '@kepler.gl/components';
-import {BUG_REPORT_LINK, USER_GUIDE_DOC} from '@kepler.gl/constants';
+import {PanelHeaderFactory} from '@kepler.gl/components';
 
 export function CustomPanelHeaderFactory(...deps) {
   const PanelHeader = PanelHeaderFactory(...deps);
@@ -10,23 +9,6 @@ export function CustomPanelHeaderFactory(...deps) {
   PanelHeader.defaultProps = {
     ...PanelHeader.defaultProps,
     actionItems: [
-      {
-        id: 'bug',
-        iconComponent: Icons.Bug,
-        href: BUG_REPORT_LINK,
-        blank: true,
-        tooltip: 'Bug Report',
-        onClick: () => {}
-      },
-      {
-        id: 'docs',
-        iconComponent: Icons.Docs2,
-        href: USER_GUIDE_DOC,
-        blank: true,
-        tooltip: 'User Guide',
-        onClick: () => {}
-      },
-      defaultActionItems.find(item => item.id === 'storage'),
       {
         ...defaultActionItems.find(item => item.id === 'save'),
         label: null,

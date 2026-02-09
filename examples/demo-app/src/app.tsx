@@ -661,7 +661,7 @@ const App = props => {
                             getState={keplerGlGetState}
                             width={width}
                             height={height}
-                            cloudProviders={CLOUD_PROVIDERS}
+                            cloudProviders={[]}
                             localeMessages={messages}
                             onExportToCloudSuccess={onExportFileSuccess}
                             onLoadCloudMapSuccess={onLoadCloudMapSuccess}

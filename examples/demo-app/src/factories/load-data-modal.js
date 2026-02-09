@@ -31,7 +31,6 @@ const CustomLoadDataModalFactory = (...deps) => {
     defaultLoadingMethods.find(lm => lm.id === 'upload'),
     defaultLoadingMethods.find(lm => lm.id === 'tileset'),
     additionalMethods.remote,
-    defaultLoadingMethods.find(lm => lm.id === 'storage'),
     additionalMethods.sample
   ];
 
