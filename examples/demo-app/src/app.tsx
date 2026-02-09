@@ -32,7 +32,6 @@ import {messages} from './constants/localization';
 
 import {
   loadRemoteMap,
-  loadSampleConfigurations,
   onExportFileSuccess,
   onLoadCloudMapSuccess
 } from './actions';
@@ -188,11 +187,6 @@ const App = props => {
       );
       prevQueryRef.current = {provider, id, query};
       return;
-    }
-
-    // Load sample using its id
-    if (id) {
-      dispatch(loadSampleConfigurations(id));
     }
 
     // Load map using a custom

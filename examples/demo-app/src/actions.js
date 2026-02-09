@@ -13,9 +13,7 @@ import {_GeoJSONLoader as GeoJSONLoader} from '@loaders.gl/json';
 import {ParquetWasmLoader} from '@loaders.gl/parquet';
 
 import {
-  LOADING_SAMPLE_ERROR_MESSAGE,
-  LOADING_SAMPLE_LIST_ERROR_MESSAGE,
-  MAP_CONFIG_URL
+  LOADING_SAMPLE_ERROR_MESSAGE
 } from './constants/default-settings';
 
 // CONSTANTS
@@ -284,39 +282,3 @@ function loadRemoteData(url) {
   });
 }
 
-/**
- *
- * @param sampleMapId optional if we pass the sampleMapId, after fetching
- * map sample configurations we are going to load the actual map data if it exists
- * @returns {function(*)}
- */
-export function loadSampleConfigurations(sampleMapId = null) {
-  return dispatch => {
-    fetch(MAP_CONFIG_URL)
-      .then(response => {
-        if (!response.ok) {
-          return response.text().then(text => {
-            throw new Error(text);
-          });
-        } else {
-          return response.json();
-        }
-      })
-      .then(samples => {
-        dispatch(loadMapSampleFile(samples));
-        // Load the specified map
-        const map = sampleMapId && samples.find(s => s.id === sampleMapId);
-        if (map) {
-          dispatch(loadSample(map, false));
-        }
-      })
-      .catch(error => {
-        dispatch(
-          loadRemoteResourceError(
-            {message: `${error} - ${LOADING_SAMPLE_LIST_ERROR_MESSAGE}`},
-            MAP_CONFIG_URL
-          )
-        );
-      });
-  };
-}

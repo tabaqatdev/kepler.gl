@@ -41,6 +41,9 @@ FROM caddy:2-alpine
 # Copy the built dist folder from the previous stage
 COPY --from=0 /app/examples/demo-app/dist /usr/share/caddy
 
+# Copy public assets (logo, etc.) into the serve directory
+COPY --from=0 /app/examples/demo-app/public /usr/share/caddy
+
 # Create and configure the Caddyfile
 RUN printf ":80 {\n\
     root * /usr/share/caddy\n\
